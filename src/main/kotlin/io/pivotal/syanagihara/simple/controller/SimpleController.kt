@@ -1,9 +1,7 @@
 package io.pivotal.syanagihara.simple.controller
 
 import io.pivotal.syanagihara.simple.data.Message
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -11,7 +9,7 @@ import java.util.*
 @RequestMapping("/simple")
 class SimpleController {
 
-    @GetMapping
+    @GetMapping(value = ["/display"])
     fun getMessages() : List<Message> {
         return listOf(
                 Message(
@@ -29,5 +27,11 @@ class SimpleController {
     private fun getDate() : String {
         val simpleDateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
         return simpleDateFormat.format(Date())
+    }
+
+    @PutMapping(value = ["/insert"])
+    fun insertMessage(@RequestBody message: Message) : Message {
+        message.id = UUID.randomUUID().toString()
+        return message
     }
 }
