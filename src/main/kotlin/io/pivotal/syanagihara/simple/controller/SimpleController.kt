@@ -41,4 +41,9 @@ class SimpleController {
         message.message += "UPDATED MESSAGE:${getDate()}"
         return message
     }
+
+    @DeleteMapping(value = ["/delete/{id}"])
+    fun deleteMessage(@PathVariable(name = "id") id: String): Boolean {
+        return true
+    }
 }
