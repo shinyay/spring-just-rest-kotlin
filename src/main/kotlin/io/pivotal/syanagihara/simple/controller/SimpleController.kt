@@ -34,4 +34,11 @@ class SimpleController {
         message.id = UUID.randomUUID().toString()
         return message
     }
+
+    @PostMapping(value = ["/update"])
+    fun updateMessage(@RequestBody message: Message) : Message {
+        message.title += "UPDATED TITLE:${getDate()}"
+        message.message += "UPDATED MESSAGE:${getDate()}"
+        return message
+    }
 }
