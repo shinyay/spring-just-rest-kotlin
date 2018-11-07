@@ -43,7 +43,5 @@ class SimpleController {
     }
 
     @DeleteMapping(value = ["/delete/{id}"])
-    fun deleteMessage(@PathVariable(name = "id") id: String): Boolean {
-        return true
-    }
+    fun deleteMessage(@PathVariable(name = "id") id: String): Boolean = true
 }
