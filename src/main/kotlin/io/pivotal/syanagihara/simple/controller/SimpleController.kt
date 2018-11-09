@@ -29,13 +29,13 @@ class SimpleController {
         return simpleDateFormat.format(Date())
     }
 
-    @PutMapping(value = ["/insert"])
+    @PostMapping(value = ["/insert"])
     fun insertMessage(@RequestBody message: Message) : Message {
         message.id = UUID.randomUUID().toString()
         return message
     }
 
-    @PostMapping(value = ["/update"])
+    @PutMapping(value = ["/update"])
     fun updateMessage(@RequestBody message: Message) : Message {
         message.title += "UPDATED TITLE:${getDate()}"
         message.message += "UPDATED MESSAGE:${getDate()}"
