@@ -6,10 +6,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @RestController
-@RequestMapping("/simple")
+@RequestMapping("/messages")
 class SimpleController {
 
-    @GetMapping(value = ["/display"])
+    @GetMapping
     fun getMessages() : List<Message> {
         return listOf(
                 Message(
@@ -29,19 +29,19 @@ class SimpleController {
         return simpleDateFormat.format(Date())
     }
 
-    @PostMapping(value = ["/insert"])
+    @PostMapping
     fun insertMessage(@RequestBody message: Message) : Message {
         message.id = UUID.randomUUID().toString()
         return message
     }
 
-    @PutMapping(value = ["/update"])
+    @PutMapping
     fun updateMessage(@RequestBody message: Message) : Message {
         message.title += "UPDATED TITLE:${getDate()}"
         message.message += "UPDATED MESSAGE:${getDate()}"
         return message
     }
 
-    @DeleteMapping(value = ["/delete/{id}"])
+    @DeleteMapping(value = ["/{id}"])
     fun deleteMessage(@PathVariable(name = "id") id: String): Boolean = true
 }
