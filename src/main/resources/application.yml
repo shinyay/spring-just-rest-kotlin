@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Message API
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /admin # Default is /actuator
