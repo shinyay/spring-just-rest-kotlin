@@ -9,7 +9,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/messages")
-class SimpleController() {
+class MessageController() {
 
     @Autowired
     private lateinit var service: MessageService
