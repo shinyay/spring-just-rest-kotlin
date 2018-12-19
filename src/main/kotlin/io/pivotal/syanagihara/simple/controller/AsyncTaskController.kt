@@ -19,6 +19,8 @@ class AsyncTaskController {
     @GetMapping("/normal")
     fun callNormalTask() = service.normalTask()
 
+    @GetMapping
+    fun callStandardTask() = service.standardTask()
 
 
 }

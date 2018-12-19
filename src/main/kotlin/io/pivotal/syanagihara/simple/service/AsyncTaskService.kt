@@ -8,19 +8,26 @@ import java.util.concurrent.TimeUnit
 @Service("Async Task Service")
 class AsyncTaskService {
 
-    val logger = LoggerFactory.getLogger(this.javaClass)!!
+    val logger = LoggerFactory.getLogger(this::class.java.name)
 
     @Async("prioritizedTaskExecutor")
     fun prioritizedTask() {
         logger.info("Prioritized Task Start")
-        TimeUnit.SECONDS.sleep(10)
+        TimeUnit.SECONDS.sleep(5)
         logger.info("Prioritized Task End")
     }
 
     @Async("normalTaskExecutor")
     fun normalTask() {
         logger.info("Normal Task Start")
-        TimeUnit.SECONDS.sleep(10)
+        TimeUnit.SECONDS.sleep(5)
+        logger.info("Normal Task End")
+    }
+
+    @Async
+    fun standardTask() {
+        logger.info("Normal Task Start")
+        TimeUnit.SECONDS.sleep(5)
         logger.info("Normal Task End")
     }
 }

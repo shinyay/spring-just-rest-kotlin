@@ -21,8 +21,8 @@ class SimpleApplication {
 
     @Bean
     fun prioritizedTaskExecutor(): TaskExecutor  = ThreadPoolTaskExecutor().apply {
-        corePoolSize = 1
-        maxPoolSize = 1
+        corePoolSize = 5
+        maxPoolSize = 5
         setQueueCapacity(5)
         setWaitForTasksToCompleteOnShutdown(true)
     }
