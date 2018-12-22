@@ -21,12 +21,12 @@ class SimpleApplication {
     }
 
     @Bean
-    fun prioritizedTaskExecutor(): TaskExecutor  = ThreadPoolTaskExecutor().apply {
-        corePoolSize = 5
-        setQueueCapacity(5)
-        maxPoolSize = 5
-        setThreadNamePrefix("HighThread-")
-        setWaitForTasksToCompleteOnShutdown(true)
+    fun prioritizedTaskExecutor(): TaskExecutor  = ThreadPoolTaskExecutor().also { it ->
+        it.corePoolSize = 5
+        it.setQueueCapacity(5)
+        it.maxPoolSize = 5
+        it.setThreadNamePrefix("HighThread-")
+        it.setWaitForTasksToCompleteOnShutdown(true)
     }
 }
 
