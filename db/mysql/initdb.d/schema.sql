@@ -1,11 +1,15 @@
 CREATE DATABASE app;
-GRANT ALL PRIVILEGES ON app.* TO guest@localhost IDENTIFIED BY 'guest';
-FLUSH PRIVILEGES;
+
 use app;
 
-CREATE TABLE users (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(32) NOT NULL,
-    email VARCHAR(32) NOT NULL,
-    PRIMARY KEY (id)
+CREATE TABLE sample (
+  id int(11) unsigned not null auto_increment,
+  name varchar(255) not null,
+  created_at datetime not null default current_timestamp,
+  updated_at datetime not null default current_timestamp on update current_timestamp,
+  primary key (id)
 );
+
+GRANT ALL PRIVILEGES ON app.* to guest IDENTIFIED BY 'guest';
+FLUSH PRIVILEGES;
+
