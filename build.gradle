@@ -22,6 +22,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'io.pivotal.syanagihara'
 version = '0.0.2-SNAPSHOT'
 sourceCompatibility = 1.8
+
 compileKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -35,6 +36,8 @@ compileTestKotlin {
 	}
 }
 
+
+
 repositories {
 	mavenCentral()
 }
@@ -46,5 +49,7 @@ dependencies {
 	implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation('org.flywaydb:flyway-core')
+	implementation('mysql:mysql-connector-java')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
