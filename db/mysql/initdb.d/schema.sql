@@ -1,4 +1,6 @@
 CREATE DATABASE app;
+GRANT ALL PRIVILEGES ON app.* TO guest@localhost IDENTIFIED BY 'guest';
+FLUSH PRIVILEGES;
 use app;
 
 CREATE TABLE users (
