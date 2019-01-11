@@ -1,27 +1,19 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.3.11'
-		springBootVersion = '2.1.0.RELEASE'
 	}
 	repositories {
 		mavenCentral()
 	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-	}
 }
 
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-spring'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
-group = 'io.pivotal.syanagihara'
-version = '0.0.2-SNAPSHOT'
-sourceCompatibility = 1.8
+plugins {
+	id "org.flywaydb.flyway" version "5.2.4"
+	id "org.springframework.boot" version "2.1.1.RELEASE"
+	id "io.spring.dependency-management" version "1.0.6.RELEASE"
+	id "org.jetbrains.kotlin.plugin.spring" version "1.3.11"
+	id "org.jetbrains.kotlin.jvm" version "1.3.11"
+}
 
 compileKotlin {
 	kotlinOptions {
@@ -36,20 +28,28 @@ compileTestKotlin {
 	}
 }
 
+flyway {
+	url = 'jdbc:mysql://localhost:3306/app?autoReconnect=true&useSSL=false'
+	user = 'guest'
+	password = 'guest'
+}
 
+group = 'io.pivotal.syanagihara'
+version = '0.0.2-SNAPSHOT'
+sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation('org.springframework.boot:spring-boot-starter-jdbc')
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation('org.flywaydb:flyway-core')
-	implementation('mysql:mysql-connector-java')
+	compile('mysql:mysql-connector-java')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
