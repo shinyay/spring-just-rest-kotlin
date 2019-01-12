@@ -51,5 +51,6 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation('org.flywaydb:flyway-core')
 	compile('mysql:mysql-connector-java')
+	compile ('com.h2database:h2')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
