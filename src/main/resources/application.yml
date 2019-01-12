@@ -2,18 +2,24 @@ spring:
   application:
     name: Message API
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: "jdbc:mysql://localhost:3306/app?autoReconnect=true&useSSL=false"
-    username: "guest"
-    password: "guest"
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
+    #    driverClassName: com.mysql.jdbc.Driver
+    #    url: "jdbc:mysql://localhost:3306/app?autoReconnect=true&useSSL=false"
+    username: guest
+    password: guest
   flyway:
-    url: jdbc:mysql://localhost:3306/app?useSSL=false
+    url: jdbc:h2:mem:app # http://localhost:8080/h2-console
+    #    url: jdbc:mysql://localhost:3306/app?useSSL=false
     user: "guest"
     password: "guest"
     baseline-on-migrate: true
     baseline-version: 1
     baseline-description: Initial
     locations: classpath:/db/migration
+  h2:
+    console:
+      enabled: true
 server:
   port: 8080
 management:
