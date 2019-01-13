@@ -2,6 +2,17 @@ spring:
   application:
     name: Message API
   datasource:
+    tomcat:
+      test-on-borrow: true
+      validation-interval: 30000
+      validation-query: SELECT 1
+      remove-abandoned: true
+      remove-abandoned-timeout: 10000
+      log-abandoned: true
+      log-validation-errors: true
+      max-age: 1800000
+      max-active: 50
+      max-idle: 10
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
     #    driverClassName: com.mysql.jdbc.Driver
