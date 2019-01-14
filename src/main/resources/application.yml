@@ -21,9 +21,10 @@ spring:
     password: guest
   flyway:
     url: jdbc:h2:mem:app # http://localhost:8080/h2-console
+    schemas: PUBLIC
     #    url: jdbc:mysql://localhost:3306/app?useSSL=false
-    user: "guest"
-    password: "guest"
+    user: guest
+    password: guest
     baseline-on-migrate: true
     baseline-version: 1
     baseline-description: Initial
