@@ -17,11 +17,6 @@ class MessageController() {
     @GetMapping
     fun getMessages() = service.getMessages()
 
-    private fun getDate() : String {
-        val simpleDateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
-        return simpleDateFormat.format(Date())
-    }
-
     @PostMapping
     fun insertMessage(@RequestBody message: Message) : Message = service.insertMessage(message)
 
