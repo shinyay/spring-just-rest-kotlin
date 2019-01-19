@@ -2,6 +2,8 @@
 
 - [ことりんと一緒 Springもね - 7. サービス](https://qiita.com/shinyay/items/8f54c2177193b978fba2)
 
+![service-layer.png](https://qiita-image-store.s3.amazonaws.com/0/127983/16ebac68-0d00-db04-84dd-5384b0353c40.png)
+
 ## 前提 / 環境
 ### ランタイムバージョン
 - Kotlin : 1.3.0
