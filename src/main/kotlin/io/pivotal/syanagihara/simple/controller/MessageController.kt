@@ -38,9 +38,5 @@ class MessageController() {
             produces = arrayOf(MediaType.APPLICATION_JSON_VALUE)
     )
     fun deleteMessage(@PathVariable(name = "id") id: String) = service.deleteMessage(id)
-
-    private fun getDate() : String {
-        val simpleDateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
-        return simpleDateFormat.format(Date())
-    }
+    
 }
