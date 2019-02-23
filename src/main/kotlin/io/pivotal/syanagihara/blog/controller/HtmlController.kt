@@ -1,4 +1,4 @@
-package io.pivotal.syanagihara.simple.controller
+package io.pivotal.syanagihara.blog.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -13,5 +13,4 @@ class HtmlController {
         model["title"] = "Blog"
         return "blog"
     }
-
 }

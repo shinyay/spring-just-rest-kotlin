@@ -1,4 +1,4 @@
-package io.pivotal.syanagihara.simple
+package io.pivotal.syanagihara
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
