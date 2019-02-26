@@ -45,5 +45,9 @@ dependencies {
 	implementation('org.flywaydb:flyway-core:5.2.4')
 	compile('mysql:mysql-connector-java')
 	compile ('com.h2database:h2')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude module: 'junit'
+	}
+	testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
