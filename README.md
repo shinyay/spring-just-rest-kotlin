@@ -17,4 +17,4 @@
 - [アプリケーション監視 - Actuator](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-actuator)
 - [非同期処理](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-async)
 - [サービス](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-service-layer)
-- []()
+- [リポジトリ](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-repository-layer)
