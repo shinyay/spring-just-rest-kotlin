@@ -18,3 +18,4 @@
 - [非同期処理](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-async)
 - [サービス](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-service-layer)
 - [リポジトリ](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-repository-layer)
+- [データベースマイグレーション](https://github.com/shinyay/spring-just-rest-kotlin/tree/first-flyway-h2)
