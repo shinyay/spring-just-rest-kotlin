@@ -37,4 +37,6 @@ class MessageService {
     }
 
     fun deleteMessage(id: String) = repository.deleteById(id)
+
+    fun getMessageIdIs(id: String): Iterable<MessageDTO> = repository.findMessageIdIs(id).map { it -> MessageDTO(it) }
 }
