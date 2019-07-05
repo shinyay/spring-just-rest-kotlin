@@ -1,13 +1,10 @@
 package io.pivotal.syanagihara.simple.controller
 
-import io.pivotal.syanagihara.simple.data.Message
 import io.pivotal.syanagihara.simple.data.MessageDTO
 import io.pivotal.syanagihara.simple.service.MessageService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 @RestController
 @RequestMapping("/messages")
@@ -39,4 +36,10 @@ class MessageController() {
     )
     fun deleteMessage(@PathVariable(name = "id") id: String) = service.deleteMessage(id)
 
+    @PostMapping(
+            value = ["/id_is"],
+            produces = arrayOf(MediaType.APPLICATION_JSON_VALUE),
+            consumes = arrayOf(MediaType.APPLICATION_JSON_VALUE)
+    )
+    fun getMessagesFromId(@RequestBody payload: MessageFromId): Iterable<MessageDTO> = service.getMessageIdIs(payload.id)
 }
